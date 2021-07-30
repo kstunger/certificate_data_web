@@ -1,0 +1,12 @@
+{
+  "name": "certificate_data",
+  "version": "1.0.0",
+  "description": "Node.js on Docker",
+  "main": "cdertificate.js",
+  "scripts": {
+    "start": "node certificate.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
