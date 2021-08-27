@@ -6,6 +6,7 @@ const char* fingerprint_server = "192.168.1.11";      //Server running certifica
 const char* fingerprint_resource = "/fingerprint/";   //URL to the service
 
 String fingerprint = getFingerPrint("github.com");
+char buf[fingerprint.length() + 1];
 fingerprint.toCharArray(buf, sizeof(buf));
    
 WiFiClientSecure secureClient;
@@ -35,7 +36,6 @@ String getFingerprint(String server) {
       "Connection: close\r\n\r\n");
     delay(500);
 
-    //TODO: return full certificate and parse here?
     while (client.available()) {
       fingerprint = client.readStringUntil('\r');     
       fingerprint.trim();
